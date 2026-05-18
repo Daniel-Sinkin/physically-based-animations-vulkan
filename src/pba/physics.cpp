@@ -10,7 +10,7 @@
 #include <variant>
 //
 
-namespace ds_vk_app::pba
+namespace dans::app::pba
 {
 namespace
 {
@@ -637,4 +637,4 @@ auto PyramidSimulation::last_step_stats() const noexcept -> const PhysicsStepSta
 {
     return last_step_stats_;
 }
-}  // namespace ds_vk_app::pba
+}  // namespace dans::app::pba

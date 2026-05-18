@@ -40,13 +40,13 @@
 // Only use this on the auto for functions when using trailing return
 #define def auto
 
-namespace physically_based_animations_vulkan
+namespace dans::app::pba
 {
 template <typename T>
 [[nodiscard]] constexpr def copy(const T& value) -> std::remove_cvref_t<T>
 {
     return value;
 }
-}  // namespace physically_based_animations_vulkan
+}  // namespace dans::app::pba
 
 #endif  // PHYSICALLY_BASED_ANIMATIONS_VULKAN_SRC_DEVELOPMENT_MARKERS_HPP

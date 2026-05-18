@@ -15,7 +15,7 @@
 #endif
 //
 
-namespace physically_based_animations_vulkan
+namespace dans::app::pba
 {
 using usize = std::size_t;
 using isize = std::ptrdiff_t;
@@ -63,6 +63,6 @@ static_assert(sizeof(i64) == 8zu);
 static_assert(sizeof(f32) == 4zu);
 static_assert(sizeof(f64) == 8zu);
 
-}  // namespace physically_based_animations_vulkan
+}  // namespace dans::app::pba
 
 #endif  // PHYSICALLY_BASED_ANIMATIONS_VULKAN_SRC_TYPES_HPP

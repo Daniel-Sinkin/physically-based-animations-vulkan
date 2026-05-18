@@ -131,10 +131,10 @@ class PbaPyramidApp
         if (!paused_)
         {
             accumulator_ += std::min(dt_seconds, 0.08f) * simulation_speed_;
-            while (accumulator_ >= ds_vk_app::pba::k_fixed_dt)
+            while (accumulator_ >= dans::app::pba::k_fixed_dt)
             {
-                simulation_.step(ds_vk_app::pba::k_fixed_dt);
-                accumulator_ -= ds_vk_app::pba::k_fixed_dt;
+                simulation_.step(dans::app::pba::k_fixed_dt);
+                accumulator_ -= dans::app::pba::k_fixed_dt;
             }
         }
         sync_grabbed_flags();
@@ -215,7 +215,7 @@ class PbaPyramidApp
                 (void) viz::draw_aabb(
                     frame.draw,
                     viz::AabbMarkerConfig{
-                        .aabb = ds_vk_app::pba::body_aabb(body),
+                        .aabb = dans::app::pba::body_aabb(body),
                         .color = Color{0.34f, 0.42f, 0.48f, 0.45f},
                         .width = 0.004f,
                     }
@@ -327,13 +327,13 @@ class PbaPyramidApp
         if (forces_.gravity_enabled)
         {
             physics.simple_forces.emplace_back(
-                ds_vk_app::pba::GravityForce{.accel = forces_.gravity_accel}
+                dans::app::pba::GravityForce{.accel = forces_.gravity_accel}
             );
         }
         if (forces_.attractor_enabled)
         {
             physics.simple_forces.emplace_back(
-                ds_vk_app::pba::AttractorForce{
+                dans::app::pba::AttractorForce{
                     .target = forces_.attractor_target,
                     .magnitude = forces_.attractor_magnitude,
                 }
@@ -342,7 +342,7 @@ class PbaPyramidApp
         if (forces_.repulsion_enabled)
         {
             physics.simple_forces.emplace_back(
-                ds_vk_app::pba::RepulsionForce{
+                dans::app::pba::RepulsionForce{
                     .target = forces_.repulsion_target,
                     .accel_max = forces_.repulsion_accel_max,
                     .range = forces_.repulsion_range,
@@ -352,7 +352,7 @@ class PbaPyramidApp
         if (forces_.nbody_enabled)
         {
             physics.complex_forces.emplace_back(
-                ds_vk_app::pba::NBodyForce{
+                dans::app::pba::NBodyForce{
                     .g = forces_.nbody_g,
                     .softening = forces_.nbody_softening,
                 }
@@ -528,7 +528,7 @@ class PbaPyramidApp
     MeshHandle gltf_marker_mesh_{};
     Picker picker_{};
     Manipulator manipulator_{};
-    ds_vk_app::pba::PyramidSimulation simulation_{};
+    dans::app::pba::PyramidSimulation simulation_{};
     std::vector<Vec3> velocity_positions_{};
     std::vector<Vec3> velocity_vectors_{};
     std::vector<f32> speed_values_{};

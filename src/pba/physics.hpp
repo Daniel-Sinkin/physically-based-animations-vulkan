@@ -12,7 +12,7 @@
 #include <vector>
 //
 
-namespace ds_vk_app::pba
+namespace dans::app::pba
 {
 inline constexpr ds_vk::u32 k_body_id_base{2000u};
 inline constexpr auto k_fixed_dt = 1.0f / 120.0f;
@@ -124,4 +124,4 @@ class PyramidSimulation
     PhysicsStepStats last_step_stats_{};
     ds_vk::usize step_count_{};
 };
-}  // namespace ds_vk_app::pba
+}  // namespace dans::app::pba

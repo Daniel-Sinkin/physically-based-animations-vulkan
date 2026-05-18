@@ -23,7 +23,6 @@
 *.dll
 *.so.*
 
-
 # Fortran module files
 *.mod
 *.smod
@@ -72,6 +71,9 @@ Testing/
 .cache/
 .venv/
 run/
+imgui.ini
 
-# Local private course material and notes.
+# Local private assets and experiments.
+local/
+assets/
 private/

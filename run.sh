@@ -4,14 +4,14 @@ set -euo pipefail
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${repo_root}"
 
-build_dir="${DS_TEMPLATE_BUILD_DIR:-build}"
-target="ds_template"
+build_dir="${PBA_BUILD_DIR:-build}"
+target="physically_based_animations_vulkan"
 
 if [[ ! -f "${build_dir}/CMakeCache.txt" ]]; then
     cmake -S . -B "${build_dir}"
 fi
 
-build_log="$(mktemp "${TMPDIR:-/tmp}/ds_template_build.XXXXXX")"
+build_log="$(mktemp "${TMPDIR:-/tmp}/pba_build.XXXXXX")"
 cleanup() {
     rm -f "${build_log}"
 }

@@ -9,25 +9,23 @@ if ! command -v watchexec >/dev/null 2>&1; then
     exit 127
 fi
 
-watch_args=(
-    --restart
-    --quiet
-    --clear=reset
-    --postpone
-    --stop-signal SIGTERM
-    --stop-timeout 2s
-    --watch CMakeLists.txt
-    --watch app
-    --watch src
-    --watch .clang-format
-    --watch .clang-tidy
-    --ignore 'build/**'
-    --ignore 'build-*/**'
-    --ignore 'run/**'
-    --ignore '**/*.swp'
-    --ignore '**/*.swo'
-    --ignore '**/*~'
-    --ignore '**/.DS_Store'
-)
-
-exec watchexec "${watch_args[@]}" -- ./run.sh "$@"
+exec watchexec \
+    --restart \
+    --quiet \
+    --clear=reset \
+    --postpone \
+    --stop-signal SIGTERM \
+    --stop-timeout 2s \
+    --watch app \
+    --watch src \
+    --watch CMakeLists.txt \
+    --ignore "build/**" \
+    --ignore "build-*/**" \
+    --ignore "local/**" \
+    --ignore "run/**" \
+    --ignore "imgui.ini" \
+    --ignore "**/*.swp" \
+    --ignore "**/*.swo" \
+    --ignore "**/*~" \
+    --ignore "**/.DS_Store" \
+    -- ./run.sh -- "$@"

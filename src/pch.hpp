@@ -1,5 +1,8 @@
 // src/pch.hpp
 
+#ifndef PHYSICALLY_BASED_ANIMATIONS_VULKAN_SRC_PCH_HPP
+#define PHYSICALLY_BASED_ANIMATIONS_VULKAN_SRC_PCH_HPP
+
 #pragma once
 
 #include <algorithm>      // IWYU pragma: keep
@@ -42,3 +45,5 @@
 #if defined(__ARM_NEON) || defined(__ARM_NEON__)
 #    include <arm_neon.h>  // IWYU pragma: keep
 #endif
+
+#endif  // PHYSICALLY_BASED_ANIMATIONS_VULKAN_SRC_PCH_HPP

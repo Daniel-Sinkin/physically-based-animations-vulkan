@@ -1,3 +1,4 @@
+<!-- README.md -->
 # physically-based-animations-vulkan
 
 Realtime rigid-body / physically based animation visualization app using `ds-vk`.

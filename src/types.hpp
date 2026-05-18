@@ -4,12 +4,16 @@
 #define PHYSICALLY_BASED_ANIMATIONS_VULKAN_SRC_TYPES_HPP
 #pragma once
 
+// Internals
+// Externals
+// Standard Library
 #include <cstddef>
 #include <cstdint>
 #include <type_traits>
 #if defined(__has_include) and __has_include(<stdfloat>)
 #    include <stdfloat>
 #endif
+//
 
 namespace physically_based_animations_vulkan
 {

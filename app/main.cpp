@@ -1,5 +1,7 @@
 // app/main.cpp
+// Internals
 #include "pba/physics.hpp"
+// Externals
 #include "ds_vk/assets.hpp"
 #include "ds_vk/math.hpp"
 #include "ds_vk/mesh.hpp"
@@ -8,13 +10,13 @@
 #include "ds_vk/plugins/viz.hpp"
 #include "ds_vk/runtime.hpp"
 #include "ds_vk/types.hpp"
-
+#include <glm/gtc/constants.hpp>
+#include <imgui.h>
+// Standard Library
 #include <algorithm>
 #include <cmath>
 #include <exception>
 #include <filesystem>
-#include <glm/gtc/constants.hpp>
-#include <imgui.h>
 #include <iostream>
 #include <limits>
 #include <optional>
@@ -23,6 +25,7 @@
 #include <string_view>
 #include <utility>
 #include <vector>
+//
 
 namespace
 {

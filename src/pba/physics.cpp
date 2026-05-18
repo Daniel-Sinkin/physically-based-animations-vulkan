@@ -1,10 +1,14 @@
 // src/pba/physics.cpp
+// Header
 #include "pba/physics.hpp"
-
+// Internals
+// Externals
+// Standard Library
 #include <algorithm>
 #include <cmath>
 #include <format>
 #include <variant>
+//
 
 namespace ds_vk_app::pba
 {

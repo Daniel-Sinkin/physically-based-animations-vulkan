@@ -1,13 +1,16 @@
 // src/pba/physics.hpp
 #pragma once
 
+// Internals
+// Externals
 #include "ds_vk/geometry.hpp"
 #include "ds_vk/types.hpp"
-
+// Standard Library
 #include <span>
 #include <string>
 #include <variant>
 #include <vector>
+//
 
 namespace ds_vk_app::pba
 {

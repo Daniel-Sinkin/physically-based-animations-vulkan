@@ -35,6 +35,10 @@ add_executable(physically_based_animations_vulkan
 target_include_directories(physically_based_animations_vulkan PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
+
+target_precompile_headers(physically_based_animations_vulkan PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/pch.hpp
+)
 target_compile_definitions(physically_based_animations_vulkan PRIVATE
   DS_VK_ASSET_DIR="${CMAKE_CURRENT_SOURCE_DIR}/local/assets"
 )

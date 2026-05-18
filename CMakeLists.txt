@@ -23,7 +23,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_subdirectory(external/ds-vk)
+include(FetchContent)
+
+set(DS_VK_GIT_REPOSITORY "git@github.com:Daniel-Sinkin/ds-vk.git" CACHE STRING "ds-vk Git repository")
+set(DS_VK_GIT_TAG "62a43e99905177aef79099308976f70a2bd76a54" CACHE STRING "Frozen ds-vk commit")
+FetchContent_Declare(ds_vk
+  GIT_REPOSITORY "${DS_VK_GIT_REPOSITORY}"
+  GIT_TAG "${DS_VK_GIT_TAG}"
+)
+FetchContent_MakeAvailable(ds_vk)
 
 if(NOT TARGET ds_vk)
   message(FATAL_ERROR "ds_vk runtime target is unavailable. Install Vulkan and glslc, or configure ds-vk runtime support.")
